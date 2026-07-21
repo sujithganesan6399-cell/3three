@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
 import {context} from 'react';
+import Profile from './profile';
 
 export default function CheckoutForm() {
   const inputRef = useRef([]);
   const [errorMessage, setErrorMessage] = useState("");
+  const [useProfile,setUseProfile] = useState("home");
 
 const fileds = [
     { label: 'Name', name: 'name' },
@@ -11,7 +13,14 @@ const fileds = [
     { label: 'Password', name: 'password' },
   ];
 
+  function moveToProfile() {
+        setUseProfile("profile");
+        return;
+    }
+    
   function handleSubmit() {
+    const profileFunc=moveToProfile;
+    if (profileFunc === true) {
     for (let i = 0; i < fileds.length; i++) {
       
       const currentBox = inputRef.current[i];
@@ -25,7 +34,7 @@ const fileds = [
                return; 
       }
     }
-
+}
     setErrorMessage(""); 
     alert("Success! All fields are filled out.");
   }
@@ -46,7 +55,7 @@ const fileds = [
       
       <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>
       
-      <button onClick={handleSubmit}>Submit Order</button>
+      <button onClick={moveToProfile}>Submit Order</button>
     </div>
   );
 }
