@@ -60,7 +60,7 @@ export default function Profile({ user, goBack }) {
     <div className="bg">
       <div style={glassBoxStyle}>
         
-        <img src={user.image} alt="User Avatar" style={imgStyle} />
+        <img src={user.image} style={imgStyle} />
         
         <h2 style={{ margin: "0 0 5px 0", fontSize: "28px", fontWeight: "bold" }}>
           {user.name}
