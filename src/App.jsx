@@ -1,23 +1,27 @@
 import Profile from './component/profile';
-import {useState} from 'react';
+import { useState } from 'react';
 import Errormgs from './component/useref';
 
 export default function App() {
   const [activeScreen, setActiveScreen] = useState("home");
   const [userData, setUserData] = useState(null);
-  function handleFormSubmit(data) {
-    setUserData(data);
-    setActiveScreen("profile");
+
+  function handleLoginSuccess(data) {
+    setUserData(data);             
+    setActiveScreen("profile");    
   }
 
   if (activeScreen === "Errormgs") {
     return (
       <div className="App">
-        <Errormgs onSubmit={handleFormSubmit} />
-        <button onClick={() => setActiveScreen("profile")}>View Profile</button>
+        <Errormgs moveToProfile={handleLoginSuccess} />
+        
+        <button onClick={() => setActiveScreen("home")}>Go Back Home</button>
       </div>
     );
   }
+
+
   else if (activeScreen === "home") {
     return (
       <div className="App">
@@ -34,6 +38,5 @@ export default function App() {
       </div>
     );
   }
-  
-}
 
+}
