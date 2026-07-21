@@ -1,10 +1,11 @@
 import { useRef, useState } from 'react';
+import {context} from 'react';
 
 export default function CheckoutForm() {
   const inputRef = useRef([]);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const fileds = [
+const fileds = [
     { label: 'Name', name: 'name' },
     { label: 'Email', name: 'email' },
     { label: 'Password', name: 'password' },
@@ -31,12 +32,11 @@ export default function CheckoutForm() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>Complete Your Order</h2>
-      
+      <h2>Login</h2>
+
       {fileds.map((field, index) => (
         <div key={index} style={{ marginBottom: "15px" }}>
           <label style={{ display: "block" }}>{field.label}:</label>
-          
           <input 
             ref={(el) => inputRef.current[index] = el} 
             name={field.name} 

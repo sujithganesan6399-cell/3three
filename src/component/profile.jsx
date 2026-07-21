@@ -1,21 +1,20 @@
-import {fileds} from './useref'
-import {createContext, useContext} from 'react'
-import { useState } from 'react'
+export default function Profile({ user, goBack }) {
+  if (!user){
+    return (
+      <div style={{ padding: "20px", border: "2px solid red" }}>
+        <h2>Error</h2>
+        <p>No user data available. Please log in first.</p>
+        <button onClick={goBack}>Go Back</button>
+      </div>
+    );
+  }
 
-export const UserContext = createContext()
-
-const [fileds, setFileds] = useState({Name: '', Email: '', Password: ''})
-
-export default function Profile() {
-  const user = fileds.Name
   return (
-    <div>
-      <h1>Profile</h1>
-      <ul>
-        {fileds.map((field, index) => (
-          <li key={index}>{field.label}: {field.name}</li>
-        ))}
-      </ul>
+    <div style={{ padding: "20px", border: "2px solid green" }}>
+      <h2>Welcome, {user.name}!</h2>
+      <p><strong>Your registered email is:</strong> {user.email}</p>
+      
+      <button onClick={goBack}>Log Out & Go Back</button>
     </div>
-  )
+  );
 }
