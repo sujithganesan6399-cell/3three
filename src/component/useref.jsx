@@ -84,7 +84,6 @@ export default function CheckoutForm({ moveToProfile }) {
     border: "none", borderBottom: "2px solid white", color: "white",
     outline: "none", marginBottom: "15px"
   };
-
   const btnStyle = {
     width: "100%", padding: "12px", background: "rgba(255, 255, 255, 0.25)",
     color: "white", border: "1px solid rgba(255,255,255,0.5)", borderRadius: "8px",
@@ -109,6 +108,7 @@ export default function CheckoutForm({ moveToProfile }) {
           {imgPreview && (
             <div style={{ marginTop: "10px", textAlign: "center" }}>
               <img 
+                id="file-uplode"
                 src={imgPreview} 
                 alt="Live Preview" 
                 style={{ width: "80px", height: "80px", borderRadius: "50%", objectFit: "cover", border: "2px solid white" }}
