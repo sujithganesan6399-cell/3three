@@ -1,0 +1,9 @@
+.bg {
+    Height: "100vh";
+    background-color: "linear-gradient(135deg, #001621 10%, #ff4103 100%)";
+    display: "flex";
+    justify-content: "center";
+    align-Items: "center";
+    font-Family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+    margin: 0;
+  };
