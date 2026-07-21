@@ -19,8 +19,6 @@ const fileds = [
     }
     
   function handleSubmit() {
-    const profileFunc=moveToProfile;
-    if (profileFunc === true) {
     for (let i = 0; i < fileds.length; i++) {
       
       const currentBox = inputRef.current[i];
@@ -34,7 +32,7 @@ const fileds = [
                return; 
       }
     }
-}
+
     setErrorMessage(""); 
     alert("Success! All fields are filled out.");
   }
@@ -55,7 +53,7 @@ const fileds = [
       
       <p style={{ color: "red", fontWeight: "bold" }}>{errorMessage}</p>
       
-      <button onClick={moveToProfile}>Submit Order</button>
+      <button onClick={handleSubmit}>Submit Order</button>
     </div>
   );
 }

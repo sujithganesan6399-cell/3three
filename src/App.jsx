@@ -14,10 +14,11 @@ export default function App() {
     return (
       <div className="App">
         <Errormgs onSubmit={handleFormSubmit} />
+        <button onClick={() => setActiveScreen("profile")}>View Profile</button>
       </div>
     );
   }
-  if (activeScreen === "home") {
+  else if (activeScreen === "home") {
     return (
       <div className="App">
         <h1>Welcome to the App</h1>
@@ -33,5 +34,6 @@ export default function App() {
       </div>
     );
   }
+  
 }
 
