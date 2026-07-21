@@ -1,4 +1,4 @@
-import Errormgs from './component/useref'
+import Errormgs from './component/useref';
 
 export default function App() {
   return (
